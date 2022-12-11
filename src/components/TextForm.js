@@ -4,11 +4,13 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to uppercase!!", "success");
   };
 
-  const handleloClick = () => {
+  const handleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to Lowercase!!", "success");
   };
 
   const handleInvertClick = () => {
@@ -17,22 +19,26 @@ export default function TextForm(props) {
       .map((c) => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()))
       .join("");
     setText(newText);
+    props.showAlert("All case are Inverted !!", "success");
   };
 
   const handleCopy = () => {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Text is copied to clipboard!!", "success");
   };
 
   const handleExtraSpace = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Extra spaces are removed!!", "success");
   };
 
   const handleClearClick = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Text area clear !!", "success");
   };
 
   const handleOnChange = (event) => {
@@ -66,7 +72,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2" onClick={handleUpClick}>
           Covert to Uppercase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleloClick}>
+        <button className="btn btn-primary mx-2" onClick={handleLoClick}>
           Covert to Lowercase
         </button>
         <button className="btn btn-primary mx-2" onClick={handleInvertClick}>

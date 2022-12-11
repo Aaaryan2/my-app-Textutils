@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 export default function About() {
   const [myStyle, setMyStyle] = useState({
-    color: "white",
-    backgroundColor: "black",
+    color: "black",
+    backgroundColor: "white",
   });
 
   const [btnText, setBtnText] = useState("Enable Dark Mode");
@@ -46,7 +46,7 @@ export default function About() {
           <div
             id="collapseOne"
             className="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
+            aria-labelledBy="headingOne"
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
@@ -78,7 +78,7 @@ export default function About() {
           <div
             id="collapseTwo"
             className="accordion-collapse collapse"
-            aria-labelledby="headingTwo"
+            aria-labelledBy="headingTwo"
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
@@ -110,7 +110,7 @@ export default function About() {
           <div
             id="collapseThree"
             className="accordion-collapse collapse"
-            aria-labelledby="headingThree"
+            aria-labelledBy="headingThree"
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
@@ -126,7 +126,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="container my-3 py-3">
+      <div className="container my-3 py-2">
         <button onClick={toggleStyle} type="button" className="btn btn-dark">
           {btnText}
         </button>
